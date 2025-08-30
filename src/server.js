@@ -7,6 +7,9 @@ import { and, eq } from "drizzle-orm";
 
 const app = express();
 const PORT = ENV.PORT || 8001;
+
+if(ENV.NODE_ENV ===  "production") job.start();
+
 app.use(express.json());
 app.get("/api/health", (req, res) => {
   res.status(200).json({ success: true });
